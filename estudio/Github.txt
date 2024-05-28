@@ -1,0 +1,117 @@
+colocar datos de cuenta de github para comenzar a crear un repositorio
+
+devasc@labvm:~$ git config --global user.name "SampleUser"
+devasc@labvm:~$ git config --global user.email sample@example.com
+
+corroborar los datos
+git config --list
+
+***ruta donde se crea el repositorio***
+cd /home/devasc/labs/devnet-src/
+mkdir git-intro
+cd git-intro
+
+definir como repositorio git (se crea un archivo oculto .git)
+
+#git init
+
+**para ver si se creo el archivo .git**
+ls -a  
+probar si funciona
+git status
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+en caso de tener que crea estos pasos
+echo DEVASC.txt 
+para editarlo
+echo "texto de prueba" > DEVASC.txt
+veridicar que se edito
+cat DEVASC.txt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+para preparar el archivo deseado ("archivo de exemplo")
+git add "DEVASC.txt"
+
+veridicar con 
+git status
+
+confirmar un archivo
+git commit -m "Confirmar texto solicitado" / DEVASC.txt para comenzar a realizar un seguimiento de los cambios
+
+*mesaje*
+deberia lanzar un mensaje como este ( b510f8e es la id deconfirmacion)
+[master (root-commit) b510f8e] Committing DEVASC.txt to begin tracking changes
+
+git log para ver los cambios realizados
+
+***para crear un branch***
+
+#git branch nombredebranch
+
+#para cambiar de branch usar 
+
+#git checkout nombredebranch
+
+para almacenar temporalmente el archivo en el nuevo branch usar
+#git add DEVASC.txt (archivo de ejemplo)
+
+***para confirmar el añadir un comentario*** 
+git commit -m "Se ha añadido una tercera línea en la rama de la función"
+***para ver si funciono usar***
+git log
+
+***para intregar git a github***
+
+en github.com
+
+Seleccione el botón "Nuevo repositorio" o haga clic en el icono "+" en la esquina superior derecha y seleccione "Nuevo repositorio". 
+Cree un repositorio con la siguiente información:
+Nombre del repositorio: devasc-study-team
+Descripción: Trabajando juntos para aprobar el examen DEVASC
+Público/Privado: Privado
+Seleccione: Crear repositorio
+
+en la terminal de devasc moverse al la carpeta git-intro
+cd /home/devasc/labs/devnet-src/git-intro
+
+luego cree una carpeta "nombre solicitado"
+mkdir "nombre de la carpeta"
+cd /home/devasc/labs/devnet-src/git-intro/"carpeta"
+
+mover un archivo 
+cp /home/devasc/labs/devnet-src/git-intro/DEVASC.txt /home/devasc/labs/devnet-src/git-intro/practicando/ 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+en caso de no colocar la credenciales de github en el inicio
+felipe peruano
+
+Si las variables user.name y user.email no coinciden con tus credenciales de GitHub, cámbialas ahora.
+devasc@labvm:~$ git config --global user.name "GitHub username"
+devasc@labvm:~$ git config --global user.email GitHub-email-address
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Repositorio de Git a repositorio github
+git remote add origin https://github.com/Felipe-dev-Duoc/practicando.git
+
+***para verificar conexion **
+git remote --verbose
+agregar
+git add "DEVASC.txt" archivo de ejemplo
+para confirmar
+git commit -m "Agregar DEVASC.txt archivo a (carptea usada)"
+
+para subir el archivo
+git push origin "master" (repostorio a subir)
+te solicitara los siguientes datos
+
+Username for 'https://github.com': Felipe-dev-Duoc
+Password for 'https://username@github.com': Personal Access Token
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 347 bytes | 347.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/Felipe-dev-Duoc/practicando.git
+
+meterse a www.github.com
+y verificar
+
